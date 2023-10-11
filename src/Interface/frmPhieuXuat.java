@@ -1,8 +1,3 @@
-/*
- * To cphieuXuate this license header, choose License Headers in Project Properties.
- * To cphieuXuate this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interface;
 
 import Model.CTPhieuXuatModel;
@@ -24,32 +19,30 @@ import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ngoc Son
- */
 public class frmPhieuXuat extends javax.swing.JInternalFrame {
- private final PhieuXuat phieuXuat = new PhieuXuat();            
+
+    private final PhieuXuat phieuXuat = new PhieuXuat();
     private final DefaultTableModel tableModel = new DefaultTableModel();
-    private boolean cothem=true;
-    private final DefaultComboBoxModel comModel=new DefaultComboBoxModel();
-    private final HangHoa Loai=new HangHoa();
+    private boolean cothem = true;
+    private final DefaultComboBoxModel comModel = new DefaultComboBoxModel();
+    private final HangHoa Loai = new HangHoa();
     private String ID;
+
     /**
      * Creates new form NewJInternalFrame
      */
     public frmPhieuXuat(String id) throws SQLException {
         initComponents();
-        this.ID=id;
-        String []colsName = {"Mã Phiếu", "Mã Hàng","Số lượng","Đơn Giá","Thành Tiền","Ngày Lập"};
+        this.ID = id;
+        String[] colsName = {"Mã Phiếu", "Mã Hàng", "Số lượng", "Đơn Giá", "Thành Tiền", "Ngày Lập"};
         tableModel.setColumnIdentifiers(colsName);  // đặt tiêu đề cột cho tableModel
         cboMaHang.setModel(comModel);
         JTableLoaiSP.setModel(tableModel);    // kết nối jtable với tableModel  
         ShowData(); // gọi hàm ShowData để đưa dữ liệu vào tableModel và hiện 
-        ResultSet rs2=Loai.ShowHangHoa();
-     while(rs2.next()){
-                comModel.addElement(rs2.getString(1));
-            }
+        ResultSet rs2 = Loai.ShowHangHoa();
+        while (rs2.next()) {
+            comModel.addElement(rs2.getString(1));
+        }
         setNull();
         setKhoa(true);
         setButton(true);
@@ -312,40 +305,38 @@ public class frmPhieuXuat extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-public void ClearData() throws SQLException{
-         //Lay chi so dong cuoi cung
-         int n=tableModel.getRowCount()-1;
-         for(int i=n;i>=0;i--)
+public void ClearData() throws SQLException {
+        //Lay chi so dong cuoi cung
+        int n = tableModel.getRowCount() - 1;
+        for (int i = n; i >= 0; i--) {
             tableModel.removeRow(i);//Remove tung dong    
-         
-    } 
-    private void setNull()
-    {        
+        }
+    }
+
+    private void setNull() {
         String ngay;
         this.txtMaPhieu.setText(null);
-        this.txtDonGia.setText(null);      
+        this.txtDonGia.setText(null);
         txtThanhTien.setText(null);
         //this.txtDonGia.setText(null);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"); 
-				Date date = new Date();
-				ngay = String.valueOf(dateFormat.format(date));
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+        ngay = String.valueOf(dateFormat.format(date));
         this.txtDate.setText(ngay);
-        this.txtMaPhieu.requestFocus();      
+        this.txtMaPhieu.requestFocus();
     }
-        private void setKhoa(boolean a)
-    {       
+
+    private void setKhoa(boolean a) {
         this.txtMaPhieu.setEnabled(!a);
-        this.txtDonGia.setEnabled(!a);  
+        this.txtDonGia.setEnabled(!a);
         txtThanhTien.setEnabled(!a);
         txtDonGia.setEnabled(false);
-       
+
         //cboMaHang.setEnabled(!a);
         //cboMaHang.setEnabled(!a);
-       
-        
-    }  
-        private void setButton(boolean a)
-    {
+    }
+
+    private void setButton(boolean a) {
         //Vo hieu hoac co hieu luc cho cac JButton
         this.btThem.setEnabled(a);
         this.btXoa.setEnabled(a);
@@ -353,12 +344,13 @@ public void ClearData() throws SQLException{
         this.btLuu.setEnabled(!a);
         this.btKLuu.setEnabled(!a);
         this.btThoat.setEnabled(a);
-    }        
-        public void ShowData() throws SQLException{        
-        ResultSet result=  phieuXuat.ShowChiTietPhieuXuat();  
-        
+    }
+
+    public void ShowData() throws SQLException {
+        ResultSet result = phieuXuat.ShowChiTietPhieuXuat();
+
         try {
-            while(result.next()){ // nếu còn đọc tiếp được một dòng dữ liệu
+            while (result.next()) { // nếu còn đọc tiếp được một dòng dữ liệu
                 String rows[] = new String[6];
                 rows[0] = result.getString(1); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
                 rows[1] = result.getString(2); // lấy dữ liệu tai cột số 2 ứng với tên hàng
@@ -369,11 +361,10 @@ public void ClearData() throws SQLException{
                 tableModel.addRow(rows); // đưa dòng dữ liệu vào tableModel để hiện thị lên jtable
                 //mỗi lần có sự thay đổi dữ liệu ở tableModel thì Jtable sẽ tự động update lại trên frame
             }
-           
-            
+
         } catch (SQLException e) {
-        } 
-    }       
+        }
+    }
     private void btKLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btKLuuActionPerformed
         // TODO add your handling code here:
         setNull();
@@ -386,28 +377,25 @@ public void ClearData() throws SQLException{
         setKhoa(false);
         setButton(false);
         setNull();
-        cothem=true;
+        cothem = true;
     }//GEN-LAST:event_btThemActionPerformed
 
     private void btXoaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btXoaMouseClicked
         // TODO add your handling code here:
-        String maPhieu=txtMaPhieu.getText();
+        String maPhieu = txtMaPhieu.getText();
         try {
-            if(maPhieu.length()==0)
-            JOptionPane.showMessageDialog(null,"Chon 1 loai SP de xoa","Thong bao",1);
-            else
-            {
-                if(JOptionPane.showConfirmDialog(null, "Ban muon xoa loai " + maPhieu + "nay hay khong?","Thong bao",2)==0)
-                {
+            if (maPhieu.length() == 0) {
+                JOptionPane.showMessageDialog(null, "Chon 1 loai SP de xoa", "Thong bao", 1);
+            } else {
+                if (JOptionPane.showConfirmDialog(null, "Ban muon xoa loai " + maPhieu + "nay hay khong?", "Thong bao", 2) == 0) {
                     phieuXuat.DeleteData(maPhieu);//goi ham xoa du lieu theo ma loai
                     ClearData();//Xoa du lieu trong tableModel
                     ShowData();//Do du lieu vao table Model
                     setNull();//Xoa trang Textfield
                 }
             }
-        }
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"Xóa thất bại","Thong bao",1);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Xóa thất bại", "Thong bao", 1);
         }
     }//GEN-LAST:event_btXoaMouseClicked
 
@@ -417,80 +405,76 @@ public void ClearData() throws SQLException{
 
     private void btSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSuaActionPerformed
         // TODO add your handling code here:
-        String maPhieu=txtMaPhieu.getText();
-        if(maPhieu.length()==0) //Chua chon Ma loai
-        JOptionPane.showMessageDialog(null,"Vui long chon loi can sua","Thong bao",1);
-        else
-        {
+        String maPhieu = txtMaPhieu.getText();
+        if (maPhieu.length() == 0) //Chua chon Ma loai
+            JOptionPane.showMessageDialog(null, "Vui long chon loi can sua", "Thong bao", 1);
+        else {
             setKhoa(false);//Mo khoa cac TextField
             this.txtMaPhieu.setEnabled(false);
             setButton(false); //Khoa cac Button
-            cothem=false; //Gan cothem=false de ghi nhan trang thai la sua
+            cothem = false; //Gan cothem=false de ghi nhan trang thai la sua
         }
     }//GEN-LAST:event_btSuaActionPerformed
 
     private void JTableLoaiSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTableLoaiSPMouseClicked
         //Hien thi du lieu len cac JTextField khi Click chuot vao JTable
-        try{
-            int row =this.JTableLoaiSP.getSelectedRow();//Lay chi so dong dang chon
-            String maPhieu=(this.JTableLoaiSP.getModel().getValueAt(row,0)).toString();
-            ResultSet rs= phieuXuat.ShowChiTietPhieuXuat(maPhieu);
-            if(rs.next())//Neu co du lieu
+        try {
+            int row = this.JTableLoaiSP.getSelectedRow();//Lay chi so dong dang chon
+            String maPhieu = (this.JTableLoaiSP.getModel().getValueAt(row, 0)).toString();
+            ResultSet rs = phieuXuat.ShowChiTietPhieuXuat(maPhieu);
+            if (rs.next())//Neu co du lieu
             {
                 this.txtMaPhieu.setText(rs.getString("MaPhieu"));
                 this.txtDonGia.setText(rs.getString("DonGia"));
                 this.txtThanhTien.setText(rs.getString("ThanhTien"));
-               jSpinner2.setValue(rs.getString("SoLuong"));
+                jSpinner2.setValue(rs.getString("SoLuong"));
             }
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_JTableLoaiSPMouseClicked
 
     private void btLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLuuActionPerformed
         // TODO add your handling code here:
-        String maPhieu=txtMaPhieu.getText().trim();
-        String maHang=cboMaHang.getSelectedItem().toString().trim();
-        int soLuong=(int)jSpinner2.getValue();
-        float donGia=Float.parseFloat(txtDonGia.getText().trim());
-        float thanhTien=Float.parseFloat(txtThanhTien.getText().trim());
-        String ngayLap=txtDate.getText().trim();
-        String userID=this.ID;            
-        
-        if(maPhieu.length()==0 || maHang.length()==0)
-        JOptionPane.showMessageDialog(null,
-            "Vui long nhap Ma phiếu va mã loai","Thong bao",1);
-        else
-        if(maPhieu.length()>20 || maHang.length()>200)
-        JOptionPane.showMessageDialog(null,
-            "Ma hàng chi 20 ky tu, ten hàng la 200","Thong bao",1);
-        else
-        {
-            CTPhieuXuatModel ct = new CTPhieuXuatModel(maPhieu,maHang,soLuong,donGia,thanhTien,ngayLap,userID);
+        String maPhieu = txtMaPhieu.getText().trim();
+        String maHang = cboMaHang.getSelectedItem().toString().trim();
+        int soLuong = (int) jSpinner2.getValue();
+        float donGia = Float.parseFloat(txtDonGia.getText().trim());
+        float thanhTien = Float.parseFloat(txtThanhTien.getText().trim());
+        String ngayLap = txtDate.getText().trim();
+        String userID = this.ID;
+
+        if (maPhieu.length() == 0 || maHang.length() == 0)
+            JOptionPane.showMessageDialog(null,
+                    "Vui long nhap Ma phiếu va mã loai", "Thong bao", 1);
+        else if (maPhieu.length() > 20 || maHang.length() > 200)
+            JOptionPane.showMessageDialog(null,
+                    "Ma hàng chi 20 ky tu, ten hàng la 200", "Thong bao", 1);
+        else {
+            CTPhieuXuatModel ct = new CTPhieuXuatModel(maPhieu, maHang, soLuong, donGia, thanhTien, ngayLap, userID);
             try {
-                if(cothem==true){    //Luu cho tthem moi{
+                if (cothem == true) {    //Luu cho tthem moi{
                     phieuXuat.InsertData(ct);
-                    int soLuongTon=0;
-                    HangHoa hh=new HangHoa();
+                    int soLuongTon = 0;
+                    HangHoa hh = new HangHoa();
                     hh.conect();
-                    ResultSet rs=hh.ShowHangHoa(maHang);
-                    if(rs.next()){
-                        soLuongTon=Integer.parseInt(rs.getString("SoLuongTon"))-soLuong;
+                    ResultSet rs = hh.ShowHangHoa(maHang);
+                    if (rs.next()) {
+                        soLuongTon = Integer.parseInt(rs.getString("SoLuongTon")) - soLuong;
                     }
                     hh.EditSoLuongTon(maHang, soLuongTon);
+                } else //Luu cho sua
+                {
+                    phieuXuat.EditData(ct);
                 }
-                else                //Luu cho sua
-                phieuXuat.EditData(ct);
-                
+
                 ClearData(); //goi ham xoa du lieu tron tableModel
                 setKhoa(true);
                 ShowData(); //Do lai du lieu vao Table Model
-                   
-            setButton(true);
-            }
-            catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null,"Cap nhat that bai","Thong bao",1);
+
+                setButton(true);
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Cap nhat that bai", "Thong bao", 1);
             }
             setKhoa(true);
             setButton(true);
@@ -510,7 +494,7 @@ public void ClearData() throws SQLException{
 
     private void txtDonGiaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDonGiaFocusLost
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_txtDonGiaFocusLost
 
     private void txtDonGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDonGiaActionPerformed
@@ -519,7 +503,7 @@ public void ClearData() throws SQLException{
 
     private void jSpinner2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSpinner2MouseClicked
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_jSpinner2MouseClicked
 
     private void cboMaHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMaHangActionPerformed
@@ -533,43 +517,43 @@ public void ClearData() throws SQLException{
 //     } catch (SQLException ex) {
 //         Logger.getLogger(frmPhieuNhap.class.getName()).log(Level.SEVERE, null, ex);
 //     }
-        
+
     }//GEN-LAST:event_cboMaHangActionPerformed
 
     private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
         // TODO add your handling code here:
-        System.out.println(jSpinner2.getValue().toString().trim() );
+        System.out.println(jSpinner2.getValue().toString().trim());
         System.out.println(txtDonGia.getText().trim());
-        int soLuong=1;
-        float donGia=1;
-        float sum;      
-        soLuong=Integer.parseInt(jSpinner2.getValue().toString().trim());
-        donGia=Float.parseFloat(txtDonGia.getText().trim());
-        System.out.println(soLuong);    
-        System.out.println(donGia);    
-        
-        
-        sum=soLuong*donGia;
-        txtThanhTien.setText(""+sum);
+        int soLuong = 1;
+        float donGia = 1;
+        float sum;
+        soLuong = Integer.parseInt(jSpinner2.getValue().toString().trim());
+        donGia = Float.parseFloat(txtDonGia.getText().trim());
+        System.out.println(soLuong);
+        System.out.println(donGia);
+
+        sum = soLuong * donGia;
+        txtThanhTien.setText("" + sum);
     }//GEN-LAST:event_jSpinner2StateChanged
 
-class ItemChangeListener implements ItemListener{
-    @Override
-    public void itemStateChanged(ItemEvent event) {
-       if (event.getStateChange() == ItemEvent.SELECTED) {
-          Object item = event.getItem();
-          // do something with object
-          try {
-         // TODO add your handling code here:
-         ResultSet rs= Loai.ShowHangHoa(item.toString());
-         if(rs.next()){
-             txtDonGia.setText(rs.getString("DonGia"));
-         }
-     } catch (SQLException ex) {
-         Logger.getLogger(frmPhieuXuat.class.getName()).log(Level.SEVERE, null, ex);
-     }
-       }
-    }       
+    class ItemChangeListener implements ItemListener {
+
+        @Override
+        public void itemStateChanged(ItemEvent event) {
+            if (event.getStateChange() == ItemEvent.SELECTED) {
+                Object item = event.getItem();
+                // do something with object
+                try {
+                    // TODO add your handling code here:
+                    ResultSet rs = Loai.ShowHangHoa(item.toString());
+                    if (rs.next()) {
+                        txtDonGia.setText(rs.getString("DonGia"));
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(frmPhieuXuat.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable JTableLoaiSP;

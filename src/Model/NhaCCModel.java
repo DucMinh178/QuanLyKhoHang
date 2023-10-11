@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
-/**
- *
- * @author taduc
- */
 public class NhaCCModel {
+
     private String maNCC;
     private String tenNCC;
     private String diaChi;
     private int dienThoai;
-    
-    
 
     public NhaCCModel() {
     }
@@ -26,8 +16,7 @@ public class NhaCCModel {
         this.diaChi = diaChi;
         this.dienThoai = dienThoai;
     }
-    
-    
+
     public String getMaNCC() {
         return maNCC;
     }
@@ -59,6 +48,5 @@ public class NhaCCModel {
     public void setDienThoai(int dienThoai) {
         this.dienThoai = dienThoai;
     }
-    
-    
+
 }

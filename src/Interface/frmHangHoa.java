@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interface;
 
 import Model.HangHoaModel;
@@ -18,10 +13,6 @@ import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ngoc Son
- */
 public class frmHangHoa extends javax.swing.JInternalFrame {
 
     private final HangHoa hang = new HangHoa();
@@ -520,7 +511,7 @@ public class frmHangHoa extends javax.swing.JInternalFrame {
 
     private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
         String keySearch = txbTimKiem.getText();
-        
+
         try {
             ClearData();
             ShowData(hang.SearchHangHoa(keySearch));

@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
-/**
- *
- * @author taduc
- */
 public class LoaiSPModel {
+
     private String maLoai;
     private String tenLoai;
     private String maNCC;
@@ -22,7 +14,7 @@ public class LoaiSPModel {
         this.tenLoai = tenLoai;
         this.maNCC = maNCC;
     }
-    
+
     public String getMaLoai() {
         return maLoai;
     }
@@ -46,6 +38,5 @@ public class LoaiSPModel {
     public void setMaNCC(String maNCC) {
         this.maNCC = maNCC;
     }
-    
-    
+
 }

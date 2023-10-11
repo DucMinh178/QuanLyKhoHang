@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interface;
 
 import Proccess.PhieuNhap;
@@ -11,49 +6,47 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ngoc Son
- */
 public class frmLichSu extends javax.swing.JInternalFrame {
-private final DefaultTableModel tableModel1=new DefaultTableModel();
-private final DefaultTableModel tableModel2=new DefaultTableModel();
-private final PhieuNhap pn= new PhieuNhap();
-private final PhieuXuat px=new PhieuXuat();
-private String userID;
+
+    private final DefaultTableModel tableModel1 = new DefaultTableModel();
+    private final DefaultTableModel tableModel2 = new DefaultTableModel();
+    private final PhieuNhap pn = new PhieuNhap();
+    private final PhieuXuat px = new PhieuXuat();
+    private String userID;
+
     /**
      * Creates new form frmLichSu
      */
     public frmLichSu(String user) throws SQLException {
         initComponents();
-        this.userID=user;
+        this.userID = user;
         System.out.println(userID);
         pn.connect();
         px.connect();
-         String []colsName = {"Mã Phiếu", "Mã Hàng","Số lượng","Đơn Giá","Thành Tiền","Ngày Lập"};
+        String[] colsName = {"Mã Phiếu", "Mã Hàng", "Số lượng", "Đơn Giá", "Thành Tiền", "Ngày Lập"};
         tableModel1.setColumnIdentifiers(colsName);
         tableModel2.setColumnIdentifiers(colsName);
-        ResultSet rs1= pn.ShowChiTietPhieuNhapTheoUser(userID.trim());
-        ResultSet rs2=px.ShowChiTietPhieuXuatTheoUser(userID.trim());
-        while (rs1.next()){
+        ResultSet rs1 = pn.ShowChiTietPhieuNhapTheoUser(userID.trim());
+        ResultSet rs2 = px.ShowChiTietPhieuXuatTheoUser(userID.trim());
+        while (rs1.next()) {
             String rows[] = new String[6];
-                rows[0] = rs1.getString(1); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
-                rows[1] = rs1.getString(2); // lấy dữ liệu tai cột số 2 ứng với tên hàng
-                rows[2] = rs1.getString(3);
-                rows[3] = rs1.getString(4);
-                rows[4] = rs1.getString(5);
-                rows[5] = rs1.getString(6);
-                tableModel1.addRow(rows);
+            rows[0] = rs1.getString(1); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
+            rows[1] = rs1.getString(2); // lấy dữ liệu tai cột số 2 ứng với tên hàng
+            rows[2] = rs1.getString(3);
+            rows[3] = rs1.getString(4);
+            rows[4] = rs1.getString(5);
+            rows[5] = rs1.getString(6);
+            tableModel1.addRow(rows);
         }
-        while(rs2.next()){
+        while (rs2.next()) {
             String rows[] = new String[6];
-                rows[0] = rs2.getString(1); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
-                rows[1] = rs2.getString(2); // lấy dữ liệu tai cột số 2 ứng với tên hàng
-                rows[2] = rs2.getString(3);
-                rows[3] = rs2.getString(4);
-                rows[4] = rs2.getString(5);
-                rows[5] = rs2.getString(6);
-                tableModel2.addRow(rows);
+            rows[0] = rs2.getString(1); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
+            rows[1] = rs2.getString(2); // lấy dữ liệu tai cột số 2 ứng với tên hàng
+            rows[2] = rs2.getString(3);
+            rows[3] = rs2.getString(4);
+            rows[4] = rs2.getString(5);
+            rows[5] = rs2.getString(6);
+            tableModel2.addRow(rows);
         }
         jTable1.setModel(tableModel1);
         jTable2.setModel(tableModel2);

@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
-/**
- *
- * @author taduc
- */
 public class HangHoaModel {
+
     private String maHang;
     private String maLoai;
     private String tenHang;
@@ -76,5 +68,5 @@ public class HangHoaModel {
     public void setSoLuongTon(int soLuongTon) {
         this.soLuongTon = soLuongTon;
     }
-    
+
 }

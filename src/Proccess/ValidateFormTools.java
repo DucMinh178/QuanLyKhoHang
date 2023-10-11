@@ -1,16 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Proccess;
 
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Hoang Dong Tien
- */
 public class ValidateFormTools {
 
     public static boolean isFilledTextField(JTextField textfield, boolean trim) {

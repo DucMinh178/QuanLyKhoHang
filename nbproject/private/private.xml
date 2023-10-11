@@ -4,25 +4,32 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Database/Connect.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/HangHoa.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/PhieuXuatModel.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmPhieuNhap.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/report1.jrxml</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmNhaCC.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/Main.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/CTPhieuXuatModel.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/NhaCCModel.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/PhieuNhap.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/LoaiSPModel.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmHangHoa.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmLichSu.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/PhieuNhapModel.java</file>
-            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/HangHoa.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/Frame.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/AccountModel.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmDanhMucc.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/LoaiSP.java</file>
-            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmPhieuNhap.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/Account.java</file>
-            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmNhaCC.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/ValidateFormTools.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/PhieuXuat.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/NhaCC.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/LoginFrame.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmPhieuXuat.java</file>
-            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/Main.java</file>
-            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/CTPhieuXuatModel.java</file>
-            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/NhaCCModel.java</file>
+            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/cherry.jpg</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Proccess/CRUID.java</file>
-            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/LoaiSPModel.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/HangHoaModel.java</file>
-            <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Interface/frmHangHoa.java</file>
             <file>file:/C:/QuanLyKhoHang_2/QuanLyKhoHangSieuThi/src/Model/CTPhieuNhapModel.java</file>
         </group>
     </open-files>

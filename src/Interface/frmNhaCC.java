@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interface;
 
 import Model.NhaCCModel;
@@ -16,10 +11,6 @@ import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Ngoc Son
- */
 public class frmNhaCC extends javax.swing.JInternalFrame {
 
     private final NhaCC lsp = new NhaCC();

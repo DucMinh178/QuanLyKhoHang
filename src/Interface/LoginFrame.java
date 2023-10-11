@@ -1,12 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
- /*
- * LoginFrame.java
- *
- */
 package Interface;
 
 import Model.AccountModel;
@@ -149,11 +140,11 @@ public class LoginFrame extends javax.swing.JFrame {
         {
             String id = tfUserID.getText().trim();
             String rawPass = new String(tfPassword.getPassword());
-            
+
             AccountModel accountModel = new AccountModel();
             accountModel.setId(id);
             accountModel.setPass(rawPass);
-            
+
             Account ac = new Account();
             String value = ac.getAcc(accountModel);
             if (value.equals("not")) {

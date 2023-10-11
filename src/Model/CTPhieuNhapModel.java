@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import java.util.Date;
 
-/**
- *
- * @author taduc
- */
 public class CTPhieuNhapModel {
+
     private String maPhieu;
     private String maHang;
     private int soLuong;
@@ -33,7 +25,6 @@ public class CTPhieuNhapModel {
         this.userId = userId;
     }
 
-    
     public String getMaPhieu() {
         return maPhieu;
     }
